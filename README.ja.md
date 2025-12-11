@@ -58,7 +58,7 @@ source env/bin/activate
 pip install -r requirements.txt
 ```
 
-### 1. 記事タイトルから取得（おすすめ）
+### 1. 記事タイトルから取得
 
 ```bash
 python src/extract_viewer_history.py "ブルーアーカイブ"
