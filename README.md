@@ -38,12 +38,6 @@ The script reads the JSON payload embedded in the page (`__NEXT_DATA__`), extrac
   - `requests`
   - `beautifulsoup4`
 
-Install them with:
-```bash
-pip install -r requirements.txt
-```
-
-
 ---
 
 ## Usage
@@ -53,12 +47,13 @@ pip install -r requirements.txt
 ```bash
 python3 -m venv env
 source env/bin/activate
+pip install -r requirements.txt
 ```
 
 ### 1. Fetch by article title
 
 ```bash
-python extract_view_history.py "ブルーアーカイブ"
+python src/extract_viewer_history.py "ブルーアーカイブ"
 ```
 
 This will:
@@ -77,7 +72,7 @@ This will:
 You can redirect it to a file:
 
 ```bash
-python extract_view_history.py "ブルーアーカイブ" > ブルーアーカイブ.jsonl
+python src/extract_viewer_history.py "ブルーアーカイブ" > ブルーアーカイブ.jsonl
 ```
 
 ### 2. Export as CSV
@@ -85,7 +80,7 @@ python extract_view_history.py "ブルーアーカイブ" > ブルーアーカ�
 Use the `--csv` option to write a CSV file while still printing JSON to stdout:
 
 ```bash
-python extract_view_history.py "ブルーアーカイブ" --csv ブルーアーカイブ.csv
+python src/extract_viewer_history.py "ブルーアーカイブ" --csv ブルーアーカイブ.csv
 ```
 
 Example CSV content:
@@ -103,8 +98,8 @@ date,count
 If you have already saved the article HTML:
 
 ```bash
-python extract_view_history.py ブルーアーカイブ.html
-python extract_view_history.py ブルーアーカイブ.html --csv ブルーアーカイブ.csv
+python src/extract_viewer_history.py ブルーアーカイブ.html
+python src/extract_viewer_history.py ブルーアーカイブ.html --csv ブルーアーカイブ.csv
 ```
 
 The script will detect that `ブルーアーカイブ.html` is a file and will parse it instead of fetching from the web.

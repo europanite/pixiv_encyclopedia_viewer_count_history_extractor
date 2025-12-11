@@ -34,12 +34,6 @@ Pixiv百科事典（Pixiv Encyclopedia / pixiv百科事典）の記事から、*
   - `requests`
   - `beautifulsoup4`
 
-インストール例:
-
-```bash
-pip install -r requirements.txt
-```
-
 ---
 
 ## 使い方
@@ -49,12 +43,13 @@ pip install -r requirements.txt
 ```bash
 python3 -m venv env
 source env/bin/activate
+pip install -r requirements.txt
 ```
 
 ### 1. 記事タイトルから取得（おすすめ）
 
 ```bash
-python extract_view_history.py "ブルーアーカイブ"
+python src/extract_viewer_history.py "ブルーアーカイブ"
 ```
 
 このコマンドは:
@@ -73,7 +68,7 @@ python extract_view_history.py "ブルーアーカイブ"
 ファイルに保存したい場合:
 
 ```bash
-python extract_view_history.py "ブルーアーカイブ" > ブルーアーカイブ.jsonl
+python src/extract_viewer_history.py "ブルーアーカイブ" > ブルーアーカイブ.jsonl
 ```
 
 ### 2. CSV で保存する
@@ -81,7 +76,7 @@ python extract_view_history.py "ブルーアーカイブ" > ブルーアーカ�
 `--csv` オプションで CSV を同時に出力できます（標準出力の JSON はそのまま）。
 
 ```bash
-python extract_view_history.py "ブルーアーカイブ" --csv ブルーアーカイブ.csv
+python src/extract_viewer_history.py "ブルーアーカイブ" --csv ブルーアーカイブ.csv
 ```
 
 出力される CSV の例:
@@ -99,8 +94,8 @@ date,count
 事前にブラウザから HTML を保存してある場合:
 
 ```bash
-python extract_view_history.py ブルーアーカイブ.html
-python extract_view_history.py ブルーアーカイブ.html --csv ブルーアーカイブ.csv
+python src/extract_viewer_history.py ブルーアーカイブ.html
+python src/extract_viewer_history.py ブルーアーカイブ.html --csv ブルーアーカイブ.csv
 ```
 
 `ブルーアーカイブ.html` というファイルが存在すれば、  
