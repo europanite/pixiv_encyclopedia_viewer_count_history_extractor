@@ -4,9 +4,12 @@
 [![Python Lint](https://github.com/europanite/pixiv_encyclopedia_viewer_count_history_extractor/actions/workflows/lint.yml/badge.svg)](https://github.com/europanite/pixiv_encyclopedia_viewer_count_history_extractor/actions/workflows/lint.yml)
 [![Pytest](https://github.com/europanite/pixiv_encyclopedia_viewer_count_history_extractor/actions/workflows/pytest.yml/badge.svg)](https://github.com/europanite/pixiv_encyclopedia_viewer_count_history_extractor/actions/workflows/pytest.yml)
 
+!["web_ui"](./assets/images/web_ui.png)
+
 An Extraction Tool for Pixiv Encyclopedia Viewer Count History
 
 ## Japanese README
+
 日本語版はこちら [`README.ja.md`](README.ja.md).
 
 ---
@@ -33,7 +36,7 @@ The script reads the JSON payload embedded in the page (`__NEXT_DATA__`), extrac
 
 ## Requisites
 
-- Python 3.8+
+- Python 3.9+
 - Dependencies:
   - `requests`
   - `beautifulsoup4`

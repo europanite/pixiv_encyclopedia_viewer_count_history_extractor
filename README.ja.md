@@ -2,15 +2,19 @@
 
 [![CodeQL Advanced](https://github.com/europanite/pixiv_encyclopedia_viewer_count_history_extractor/actions/workflows/codeql.yml/badge.svg)](https://github.com/europanite/pixiv_encyclopedia_viewer_count_history_extractor/actions/workflows/codeql.yml)
 [![Python Lint](https://github.com/europanite/pixiv_encyclopedia_viewer_count_history_extractor/actions/workflows/lint.yml/badge.svg)](https://github.com/europanite/pixiv_encyclopedia_viewer_count_history_extractor/actions/workflows/lint.yml)
+[![Pytest](https://github.com/europanite/pixiv_encyclopedia_viewer_count_history_extractor/actions/workflows/pytest.yml/badge.svg)](https://github.com/europanite/pixiv_encyclopedia_viewer_count_history_extractor/actions/workflows/pytest.yml)
 
-
-## 日本語版
+!["web_ui"](./assets/images/web_ui.png)
 
 Pixiv百科事典（Pixiv Encyclopedia / pixiv百科事典）の記事から、**日ごとの閲覧数（view history）を抽出するためのスクリプト**です。
 
 ## English README
 
 An English version of this README is available in [`README.md`](README.md).
+
+---
+
+## 概要
 
 ページ内に埋め込まれている JSON（`__NEXT_DATA__`）から `/get_graph_data` → `tagCounts` を取り出し、  
 `{date, count}` のシンプルな時系列データとして出力します。
@@ -33,7 +37,7 @@ An English version of this README is available in [`README.md`](README.md).
 
 ## 動作環境
 
-- Python 3.8 以上
+- Python 3.9 以上
 - 使用ライブラリ:
   - `requests`
   - `beautifulsoup4`
@@ -105,14 +109,14 @@ python src/extract_viewer_history.py ブルーアーカイブ.html --csv ブル�
 `ブルーアーカイブ.html` というファイルが存在すれば、  
 タイトルではなく **ローカルファイル** として扱われます。
 
-###　4. Test
+###　4. テスト
 
 ```bash
 pip install -r requirements.test.txt
 pytest'
 ```
 
-### 5. Deactivate environment
+### 5. 環境を閉じる
 
 ```bash
 deactivate
