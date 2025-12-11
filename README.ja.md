@@ -109,7 +109,7 @@ python src/extract_viewer_history.py ブルーアーカイブ.html --csv ブル�
 `ブルーアーカイブ.html` というファイルが存在すれば、  
 タイトルではなく **ローカルファイル** として扱われます。
 
-###　4. テスト
+### 4. テスト
 
 ```bash
 pip install -r requirements.test.txt

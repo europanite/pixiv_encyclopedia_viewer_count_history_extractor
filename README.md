@@ -109,7 +109,7 @@ The script will detect that `ブルーアーカイブ.html` is a file and will p
 
 ---
 
-###　4. Test
+### 4. Test
 
 ```bash
 pip install -r requirements.test.txt
