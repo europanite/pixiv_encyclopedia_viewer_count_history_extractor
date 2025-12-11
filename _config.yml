@@ -1,6 +1,6 @@
-title: "standard_python_environment"
-description: "Python environment built with Docker Compose"
-baseurl: "/standard_python_environment"
+title: "pixiv_encyclopedia_viewer_count_history_extractor"
+description: "An Extraction Tool for Pixiv Encyclopedia Viewer Count History"
+baseurl: "/pixiv_encyclopedia_viewer_count_history_extractor"
 url: "https://europanite.github.io"
 theme: minima
 markdown: kramdown
