@@ -1,5 +1,15 @@
 from __future__ import annotations
 
+import csv
+import json
+import sys
+from pathlib import Path
+from typing import Any, Dict, List, Optional
+from urllib.parse import quote
+
+import requests
+from bs4 import BeautifulSoup
+
 """
 Extract daily view history from a Pixiv Encyclopedia (dic.pixiv.net) article.
 
@@ -18,16 +28,6 @@ Output (stdout):
     One JSON object per line:
     {"date": "2025-07-01", "count": 141}
 """
-
-import csv
-import json
-import sys
-from pathlib import Path
-from typing import Any, Dict, List, Optional
-from urllib.parse import quote
-
-import requests
-from bs4 import BeautifulSoup
 
 PIXIV_DIC_BASE_URL = "https://dic.pixiv.net/a/"
 
@@ -213,7 +213,8 @@ def parse_cli_args(argv: List[str]) -> tuple[str, Optional[str]]:
             csv_path = argv[i + 1]
             i += 2
         else:
-            # Unknown option; you can change this to raise instead of warning if you prefer strict behavior.
+            # Unknown option; you can change this to raise 
+            # instead of warning if you prefer strict behavior.
             print(f"warning: unknown argument ignored: {arg}", file=sys.stderr)
             i += 1
 
@@ -250,7 +251,10 @@ if __name__ == "__main__":
             "Usage: python extract_viewer_history.py <title-or-html-file> [--csv output.csv]",
             file=sys.stderr,
         )
-        print('Example: python extract_viewer_history.py "ブルーアーカイブ" --csv ブルーアーカイブ.csv', file=sys.stderr)
+        print(
+            'Example: \n' \
+            'python extract_viewer_history.py "ブルーアーカイブ" --csv ブルーアーカイブ.csv', 
+            file=sys.stderr)
         sys.exit(1)
 
     try:
