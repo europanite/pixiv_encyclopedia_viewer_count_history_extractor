@@ -113,7 +113,7 @@ python src/extract_viewer_history.py ブルーアーカイブ.html --csv ブル�
 
 ```bash
 pip install -r requirements.test.txt
-pytest'
+pytest
 ```
 
 ### 5. 環境を閉じる

@@ -113,7 +113,7 @@ The script will detect that `ブルーアーカイブ.html` is a file and will p
 
 ```bash
 pip install -r requirements.test.txt
-pytest'
+pytest
 ```
 
 ### 5. Deactivate environment
