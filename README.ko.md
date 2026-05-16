@@ -1,8 +1,8 @@
 ---
 layout: page
-title: "🇺🇸 English"
-permalink: /
-lang: en
+title: "🇰🇷 한국어"
+permalink: /ko/
+lang: ko
 ---
 
 # [Pixiv Encyclopedia Viewer History Extractor](https://github.com/europanite/pixiv_encyclopedia_viewer_count_history_extractor "Pixiv Encyclopedia Viewer History Extractor")
@@ -16,45 +16,45 @@ lang: en
 
 !["web_ui"](./assets/images/web_ui.png)
 
-An Extraction Tool for Pixiv Encyclopedia Viewer Count History
+Pixiv Encyclopedia Viewer Count History를 추출하는 도구
 
-## Japanese README
+## 일본어 README
 
-日本語版はこちら [`README.ja.md`](README.ja.md).
+일본어 버전은 여기에서 볼 수 있습니다: [`README.ja.md`](README.ja.md).
 
 ---
 
-## Overview
+## 개요
 
-Extract daily view history data from a [Pixiv Encyclopedia (pixiv百科事典)](https://dic.pixiv.net/) article.
+[Pixiv Encyclopedia (pixiv百科事典)](https://dic.pixiv.net/) article에서 일별 view history data를 추출합니다.
 
-Pixiv Encyclopedia viewer history is a nice real-world time-series dataset.
+Pixiv Encyclopedia viewer history는 실제 세계의 time-series dataset으로 활용하기 좋습니다.
 
-It often shows:
-- Weekly seasonality (weekday vs weekend traffic)
-- Occasional spikes caused by events or social media buzz
+대개 다음과 같은 패턴을 보여 줍니다:
+- 주간 seasonality (weekday vs weekend traffic)
+- events 또는 social media buzz로 인한 간헐적인 spikes
 
-You can use the extracted CSV as sample data for:
-- Time-series visualization and smoothing
+추출한 CSV는 다음 용도의 sample data로 사용할 수 있습니다:
+- Time-series visualization 및 smoothing
 - Seasonal decomposition
 - Forecasting models (ARIMA, Prophet, etc.)
 
 
-> ⚠️ **Unofficial tool**  
-> This project is not affiliated with or endorsed by Pixiv.  
-> Please follow Pixiv's Terms of Use and robots.txt when using this script.
+> ⚠️ **비공식 tool**  
+> 이 project는 Pixiv와 제휴되어 있지 않으며 Pixiv의 endorsement를 받은 것도 아닙니다.  
+> 이 script를 사용할 때는 Pixiv's Terms of Use와 robots.txt를 준수해 주세요.
 
-## Features
+## 기능
 
-- Fetch by **article title** (e.g., `"ブルーアーカイブ"`) directly from Pixiv Encyclopedia
-- Or read from a **local HTML file**
-- Output **JSON Lines** to stdout  
-  (one `{"date": "...","count": ...}` per line)
-- Optional **CSV export** via `--csv output.csv`
+- Pixiv Encyclopedia에서 **article title** (e.g., `"ブルーアーカイブ"`)로 직접 fetch
+- 또는 **local HTML file**에서 읽기
+- stdout으로 **JSON Lines** output  
+  (한 줄에 하나의 `{"date": "...","count": ...}`)
+- `--csv output.csv`를 통한 선택적 **CSV export**
 
 ---
 
-## Requirements
+## 요구 사항
 
 - Python 3.9+
 - Dependencies:
@@ -63,9 +63,9 @@ You can use the extracted CSV as sample data for:
 
 ---
 
-## Usage
+## 사용법
 
-### 0. Create virtual environment
+### 0. virtual environment 만들기
 
 ```bash
 python3 -m venv env
@@ -73,17 +73,17 @@ source env/bin/activate
 pip install -r requirements.txt
 ```
 
-### 1. Fetch by article title
+### 1. article title로 fetch
 
 ```bash
 python src/extract_viewer_history.py "ブルーアーカイブ"
 ```
 
-This will:
+이 작업은 다음을 수행합니다:
 
-- Download `https://dic.pixiv.net/a/ブルーアーカイブ`
-- Parse the embedded JSON
-- Print one JSON object per line to stdout:
+- `https://dic.pixiv.net/a/ブルーアーカイブ` 다운로드
+- embedded JSON parse
+- stdout에 한 줄당 하나의 JSON object print:
 
 ```json
 {"date": "2025-07-01", "count": 9454605}
@@ -92,21 +92,21 @@ This will:
 ...
 ```
 
-You can redirect it to a file:
+file로 redirect할 수 있습니다:
 
 ```bash
 python src/extract_viewer_history.py "ブルーアーカイブ" > ブルーアーカイブ.jsonl
 ```
 
-### 2. Export as CSV
+### 2. CSV로 export
 
-Use the `--csv` option to write a CSV file while still printing JSON to stdout:
+stdout에 JSON을 계속 print하면서 CSV file을 작성하려면 `--csv` option을 사용합니다:
 
 ```bash
 python src/extract_viewer_history.py "ブルーアーカイブ" --csv ブルーアーカイブ.csv
 ```
 
-Example CSV content:
+CSV content 예시:
 
 ```csv
 date,count
@@ -116,16 +116,16 @@ date,count
 ...
 ```
 
-### 3. Use a local HTML file
+### 3. local HTML file 사용
 
-If you have already saved the article HTML:
+article HTML을 이미 저장해 둔 경우:
 
 ```bash
 python src/extract_viewer_history.py ブルーアーカイブ.html
 python src/extract_viewer_history.py ブルーアーカイブ.html --csv ブルーアーカイブ.csv
 ```
 
-The script will detect that `ブルーアーカイブ.html` is a file and will parse it instead of fetching from the web.
+Script는 `ブルーアーカイブ.html`이 file임을 감지하고 web에서 fetch하지 않고 이를 parse합니다.
 
 ---
 
@@ -136,7 +136,7 @@ pip install -r requirements.test.txt
 pytest
 ```
 
-### 5. Deactivate environment
+### 5. environment deactivate
 
 ```bash
 deactivate
@@ -146,10 +146,10 @@ deactivate
 
 ## Notes / Limitations
 
-- No rate limiting is implemented; please:
-  - Use it responsibly
-  - Avoid sending many requests in a short time
-- This is a simple utility script, primarily intended for personal analysis or research.
+- rate limiting은 구현되어 있지 않습니다. 다음 사항을 지켜 주세요:
+  - 책임감 있게 사용하기
+  - 짧은 시간 안에 많은 requests를 보내지 않기
+- 이 도구는 주로 personal analysis 또는 research를 위한 간단한 utility script입니다.
 
 ---
 
