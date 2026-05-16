@@ -1,8 +1,8 @@
 ---
 layout: page
-title: "🇺🇸 English"
-permalink: /
-lang: en
+title: "🇩🇪 Deutsch"
+permalink: /de/
+lang: de
 ---
 
 # [Pixiv Encyclopedia Viewer History Extractor](https://github.com/europanite/pixiv_encyclopedia_viewer_count_history_extractor "Pixiv Encyclopedia Viewer History Extractor")
@@ -16,45 +16,45 @@ lang: en
 
 !["web_ui"](./assets/images/web_ui.png)
 
-An Extraction Tool for Pixiv Encyclopedia Viewer Count History
+Ein Extraktionstool für Pixiv Encyclopedia Viewer Count History
 
-## Japanese README
+## Japanisches README
 
-日本語版はこちら [`README.ja.md`](README.ja.md).
+Die japanische Version findest du hier: [`README.ja.md`](README.ja.md).
 
 ---
 
-## Overview
+## Überblick
 
-Extract daily view history data from a [Pixiv Encyclopedia (pixiv百科事典)](https://dic.pixiv.net/) article.
+Extrahiere tägliche View-History-Daten aus einem Artikel der [Pixiv Encyclopedia (pixiv百科事典)](https://dic.pixiv.net/).
 
-Pixiv Encyclopedia viewer history is a nice real-world time-series dataset.
+Die Pixiv Encyclopedia viewer history ist ein nützliches reales time-series dataset.
 
-It often shows:
-- Weekly seasonality (weekday vs weekend traffic)
-- Occasional spikes caused by events or social media buzz
+Sie zeigt häufig:
+- Wöchentliche seasonality (weekday vs weekend traffic)
+- Gelegentliche spikes, ausgelöst durch events oder social media buzz
 
-You can use the extracted CSV as sample data for:
-- Time-series visualization and smoothing
+Du kannst die extrahierte CSV als sample data verwenden für:
+- Time-series visualization und smoothing
 - Seasonal decomposition
 - Forecasting models (ARIMA, Prophet, etc.)
 
 
-> ⚠️ **Unofficial tool**  
-> This project is not affiliated with or endorsed by Pixiv.  
-> Please follow Pixiv's Terms of Use and robots.txt when using this script.
+> ⚠️ **Inoffizielles tool**  
+> Dieses project ist weder mit Pixiv verbunden noch von Pixiv endorsed.  
+> Bitte beachte Pixiv's Terms of Use und robots.txt, wenn du dieses script verwendest.
 
 ## Features
 
-- Fetch by **article title** (e.g., `"ブルーアーカイブ"`) directly from Pixiv Encyclopedia
-- Or read from a **local HTML file**
-- Output **JSON Lines** to stdout  
-  (one `{"date": "...","count": ...}` per line)
-- Optional **CSV export** via `--csv output.csv`
+- Direktes Fetch aus der Pixiv Encyclopedia per **article title** (e.g., `"ブルーアーカイブ"`)
+- Oder Lesen aus einer **local HTML file**
+- Ausgabe von **JSON Lines** nach stdout  
+  (ein `{"date": "...","count": ...}` pro Zeile)
+- Optionaler **CSV export** über `--csv output.csv`
 
 ---
 
-## Requirements
+## Anforderungen
 
 - Python 3.9+
 - Dependencies:
@@ -63,9 +63,9 @@ You can use the extracted CSV as sample data for:
 
 ---
 
-## Usage
+## Nutzung
 
-### 0. Create virtual environment
+### 0. virtual environment erstellen
 
 ```bash
 python3 -m venv env
@@ -73,17 +73,17 @@ source env/bin/activate
 pip install -r requirements.txt
 ```
 
-### 1. Fetch by article title
+### 1. Per article title fetch
 
 ```bash
 python src/extract_viewer_history.py "ブルーアーカイブ"
 ```
 
-This will:
+Dies wird:
 
-- Download `https://dic.pixiv.net/a/ブルーアーカイブ`
-- Parse the embedded JSON
-- Print one JSON object per line to stdout:
+- `https://dic.pixiv.net/a/ブルーアーカイブ` herunterladen
+- Das embedded JSON parsen
+- Ein JSON object pro Zeile nach stdout printen:
 
 ```json
 {"date": "2025-07-01", "count": 9454605}
@@ -92,7 +92,7 @@ This will:
 ...
 ```
 
-You can redirect it to a file:
+Du kannst die Ausgabe in eine file redirecten:
 
 ```bash
 python src/extract_viewer_history.py "ブルーアーカイブ" > ブルーアーカイブ.jsonl
@@ -100,13 +100,13 @@ python src/extract_viewer_history.py "ブルーアーカイブ" > ブルーア�
 
 ### 2. Export as CSV
 
-Use the `--csv` option to write a CSV file while still printing JSON to stdout:
+Verwende die option `--csv`, um eine CSV file zu schreiben und gleichzeitig JSON weiterhin nach stdout zu printen:
 
 ```bash
 python src/extract_viewer_history.py "ブルーアーカイブ" --csv ブルーアーカイブ.csv
 ```
 
-Example CSV content:
+Beispiel für CSV content:
 
 ```csv
 date,count
@@ -116,16 +116,16 @@ date,count
 ...
 ```
 
-### 3. Use a local HTML file
+### 3. Eine local HTML file verwenden
 
-If you have already saved the article HTML:
+Wenn du den article HTML bereits gespeichert hast:
 
 ```bash
 python src/extract_viewer_history.py ブルーアーカイブ.html
 python src/extract_viewer_history.py ブルーアーカイブ.html --csv ブルーアーカイブ.csv
 ```
 
-The script will detect that `ブルーアーカイブ.html` is a file and will parse it instead of fetching from the web.
+Das script erkennt, dass `ブルーアーカイブ.html` eine file ist, und parst diese, anstatt sie aus dem Web zu fetchen.
 
 ---
 
@@ -136,7 +136,7 @@ pip install -r requirements.test.txt
 pytest
 ```
 
-### 5. Deactivate environment
+### 5. Environment deaktivieren
 
 ```bash
 deactivate
@@ -146,10 +146,10 @@ deactivate
 
 ## Notes / Limitations
 
-- No rate limiting is implemented; please:
-  - Use it responsibly
-  - Avoid sending many requests in a short time
-- This is a simple utility script, primarily intended for personal analysis or research.
+- Es ist kein rate limiting implementiert; bitte:
+  - Verwende es verantwortungsbewusst
+  - Vermeide es, in kurzer Zeit viele requests zu senden
+- Dies ist ein einfaches utility script, das hauptsächlich für personal analysis oder research gedacht ist.
 
 ---
 
