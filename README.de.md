@@ -26,25 +26,23 @@ lang: de
   <a href="https://europanite.github.io/pixiv_encyclopedia_viewer_count_history_extractor/fr/">🇫🇷 Français</a>
 </p>
 
+> Diese README ist eine übersetzte Version. Die englische Version ist die maßgebliche Quelle.
+
 !["web_ui"](./assets/images/web_ui.png)
 
-Ein Extraktionstool für Pixiv Encyclopedia Viewer Count History
-
-## Japanisches README
-
-Die japanische Version findest du hier: [`README.ja.md`](README.ja.md).
+Ein Extraktionswerkzeug für Pixiv Encyclopedia Viewer Count History
 
 ---
 
 ## Überblick
 
-Extrahiere tägliche View-History-Daten aus einem Artikel der [Pixiv Encyclopedia (pixiv百科事典)](https://dic.pixiv.net/).
+Extrahiert tägliche Verlaufdaten der Aufrufzahlen aus einem Artikel der [Pixiv Encyclopedia (pixiv百科事典)](https://dic.pixiv.net/).
 
 Die Pixiv Encyclopedia viewer history ist ein nützliches reales time-series dataset.
 
 Sie zeigt häufig:
 - Wöchentliche seasonality (weekday vs weekend traffic)
-- Gelegentliche spikes, ausgelöst durch events oder social media buzz
+- Gelegentliche spikes durch events oder social media buzz
 
 Du kannst die extrahierte CSV als sample data verwenden für:
 - Time-series visualization und smoothing
@@ -52,21 +50,21 @@ Du kannst die extrahierte CSV als sample data verwenden für:
 - Forecasting models (ARIMA, Prophet, etc.)
 
 
-> ⚠️ **Inoffizielles tool**  
-> Dieses project ist weder mit Pixiv verbunden noch von Pixiv endorsed.  
+> ⚠️ **Unofficial tool**  
+> Dieses project ist nicht mit Pixiv verbunden und wird nicht von Pixiv endorsed.  
 > Bitte beachte Pixiv's Terms of Use und robots.txt, wenn du dieses script verwendest.
 
 ## Features
 
-- Direktes Fetch aus der Pixiv Encyclopedia per **article title** (e.g., `"ブルーアーカイブ"`)
+- Abruf per **article title** (e.g., `"ブルーアーカイブ"`) direkt aus der Pixiv Encyclopedia
 - Oder Lesen aus einer **local HTML file**
-- Ausgabe von **JSON Lines** nach stdout  
-  (ein `{"date": "...","count": ...}` pro Zeile)
+- Ausgabe von **JSON Lines** auf stdout  
+  (eine Zeile pro `{"date": "...","count": ...}`)
 - Optionaler **CSV export** über `--csv output.csv`
 
 ---
 
-## Anforderungen
+## Requirements
 
 - Python 3.9+
 - Dependencies:
@@ -75,9 +73,9 @@ Du kannst die extrahierte CSV als sample data verwenden für:
 
 ---
 
-## Nutzung
+## Usage
 
-### 0. virtual environment erstellen
+### 0. Virtual environment erstellen
 
 ```bash
 python3 -m venv env
@@ -85,7 +83,7 @@ source env/bin/activate
 pip install -r requirements.txt
 ```
 
-### 1. Per article title fetch
+### 1. Per article title abrufen
 
 ```bash
 python src/extract_viewer_history.py "ブルーアーカイブ"
@@ -95,7 +93,7 @@ Dies wird:
 
 - `https://dic.pixiv.net/a/ブルーアーカイブ` herunterladen
 - Das embedded JSON parsen
-- Ein JSON object pro Zeile nach stdout printen:
+- Ein JSON object pro Zeile auf stdout ausgeben:
 
 ```json
 {"date": "2025-07-01", "count": 9454605}
@@ -104,21 +102,21 @@ Dies wird:
 ...
 ```
 
-Du kannst die Ausgabe in eine file redirecten:
+Du kannst die Ausgabe in eine file umleiten:
 
 ```bash
 python src/extract_viewer_history.py "ブルーアーカイブ" > ブルーアーカイブ.jsonl
 ```
 
-### 2. Export as CSV
+### 2. Als CSV exportieren
 
-Verwende die option `--csv`, um eine CSV file zu schreiben und gleichzeitig JSON weiterhin nach stdout zu printen:
+Verwende die option `--csv`, um eine CSV file zu schreiben, während JSON weiterhin auf stdout ausgegeben wird:
 
 ```bash
 python src/extract_viewer_history.py "ブルーアーカイブ" --csv ブルーアーカイブ.csv
 ```
 
-Beispiel für CSV content:
+Example CSV content:
 
 ```csv
 date,count
@@ -137,7 +135,14 @@ python src/extract_viewer_history.py ブルーアーカイブ.html
 python src/extract_viewer_history.py ブルーアーカイブ.html --csv ブルーアーカイブ.csv
 ```
 
-Das script erkennt, dass `ブルーアーカイブ.html` eine file ist, und parst diese, anstatt sie aus dem Web zu fetchen.
+Das script erkennt, dass `ブルーアーカイブ.html` eine file ist, und parst sie, statt sie aus dem Web abzurufen.
+
+
+### .4 batch collect
+
+```bash
+bash ./scripts/collect_history.sh data/list.txt data/list/
+```
 
 ---
 
@@ -158,10 +163,10 @@ deactivate
 
 ## Notes / Limitations
 
-- Es ist kein rate limiting implementiert; bitte:
-  - Verwende es verantwortungsbewusst
-  - Vermeide es, in kurzer Zeit viele requests zu senden
-- Dies ist ein einfaches utility script, das hauptsächlich für personal analysis oder research gedacht ist.
+- Rate limiting ist nicht implementiert; bitte:
+  - Verantwortungsbewusst verwenden
+  - Nicht viele requests in kurzer Zeit senden
+- Dies ist ein simple utility script, hauptsächlich für personal analysis oder research gedacht.
 
 ---
 

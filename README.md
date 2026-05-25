@@ -30,10 +30,6 @@ lang: en
 
 An Extraction Tool for Pixiv Encyclopedia Viewer Count History
 
-## Japanese README
-
-日本語版はこちら [`README.ja.md`](README.ja.md).
-
 ---
 
 ## Overview
@@ -138,6 +134,13 @@ python src/extract_viewer_history.py ブルーアーカイブ.html --csv ブル�
 ```
 
 The script will detect that `ブルーアーカイブ.html` is a file and will parse it instead of fetching from the web.
+
+
+### .4 batch collect
+
+```bash
+bash ./scripts/collect_history.sh data/list.txt data/list/
+```
 
 ---
 
