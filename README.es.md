@@ -26,47 +26,45 @@ lang: es
   <a href="https://europanite.github.io/pixiv_encyclopedia_viewer_count_history_extractor/fr/">🇫🇷 Français</a>
 </p>
 
+> Este README es una versión traducida. La versión en inglés es la fuente oficial.
+
 !["web_ui"](./assets/images/web_ui.png)
 
 Una herramienta de extracción para Pixiv Encyclopedia Viewer Count History
-
-## README en japonés
-
-La versión en japonés está aquí: [`README.ja.md`](README.ja.md).
 
 ---
 
 ## Descripción general
 
-Extrae datos diarios del historial de visualizaciones de un artículo de [Pixiv Encyclopedia (pixiv百科事典)](https://dic.pixiv.net/).
+Extrae datos diarios del historial de visualizaciones desde un artículo de [Pixiv Encyclopedia (pixiv百科事典)](https://dic.pixiv.net/).
 
 El historial de visualizaciones de Pixiv Encyclopedia es un buen dataset de series temporales del mundo real.
 
 A menudo muestra:
-- Estacionalidad semanal (weekday vs weekend traffic)
-- Spikes ocasionales causados por events o social media buzz
+- Estacionalidad semanal (tráfico de días laborables frente a fines de semana)
+- Picos ocasionales causados por eventos o por repercusión en redes sociales
 
-Puedes usar el CSV extraído como sample data para:
-- Time-series visualization y smoothing
-- Seasonal decomposition
-- Forecasting models (ARIMA, Prophet, etc.)
+Puedes usar el CSV extraído como datos de ejemplo para:
+- Visualización y suavizado de series temporales
+- Descomposición estacional
+- Modelos de predicción (ARIMA, Prophet, etc.)
 
 
-> ⚠️ **Tool no oficial**  
-> Este project no está afiliado a Pixiv ni cuenta con su endorsement.  
-> Sigue Pixiv's Terms of Use y robots.txt al usar este script.
+> ⚠️ **Herramienta no oficial**  
+> Este project no está afiliado a Pixiv ni cuenta con su respaldo.  
+> Respeta Pixiv's Terms of Use y robots.txt al usar este script.
 
-## Características
+## Features
 
-- Fetch directamente desde Pixiv Encyclopedia por **article title** (e.g., `"ブルーアーカイブ"`)
-- O lectura desde un **local HTML file**
-- Output de **JSON Lines** a stdout  
+- Obtén datos por **article title** (e.g., `"ブルーアーカイブ"`) directamente desde Pixiv Encyclopedia
+- O lee desde un **local HTML file**
+- Genera **JSON Lines** en stdout  
   (un `{"date": "...","count": ...}` por línea)
 - **CSV export** opcional mediante `--csv output.csv`
 
 ---
 
-## Requisitos
+## Requirements
 
 - Python 3.9+
 - Dependencies:
@@ -75,7 +73,7 @@ Puedes usar el CSV extraído como sample data para:
 
 ---
 
-## Uso
+## Usage
 
 ### 0. Crear virtual environment
 
@@ -85,7 +83,7 @@ source env/bin/activate
 pip install -r requirements.txt
 ```
 
-### 1. Fetch por article title
+### 1. Obtener por article title
 
 ```bash
 python src/extract_viewer_history.py "ブルーアーカイブ"
@@ -95,7 +93,7 @@ Esto hará lo siguiente:
 
 - Descargar `https://dic.pixiv.net/a/ブルーアーカイブ`
 - Parsear el embedded JSON
-- Print de un JSON object por línea en stdout:
+- Imprimir un JSON object por línea en stdout:
 
 ```json
 {"date": "2025-07-01", "count": 9454605}
@@ -110,7 +108,7 @@ Puedes redirigirlo a un file:
 python src/extract_viewer_history.py "ブルーアーカイブ" > ブルーアーカイブ.jsonl
 ```
 
-### 2. Export as CSV
+### 2. Exportar como CSV
 
 Usa la option `--csv` para escribir un CSV file mientras sigues imprimiendo JSON en stdout:
 
@@ -118,7 +116,7 @@ Usa la option `--csv` para escribir un CSV file mientras sigues imprimiendo JSON
 python src/extract_viewer_history.py "ブルーアーカイブ" --csv ブルーアーカイブ.csv
 ```
 
-Ejemplo de CSV content:
+Example CSV content:
 
 ```csv
 date,count
@@ -130,14 +128,21 @@ date,count
 
 ### 3. Usar un local HTML file
 
-Si ya has guardado el article HTML:
+Si ya guardaste el article HTML:
 
 ```bash
 python src/extract_viewer_history.py ブルーアーカイブ.html
 python src/extract_viewer_history.py ブルーアーカイブ.html --csv ブルーアーカイブ.csv
 ```
 
-El script detectará que `ブルーアーカイブ.html` es un file y lo parseará en lugar de hacer fetch desde la web.
+El script detectará que `ブルーアーカイブ.html` es un file y lo parseará en lugar de obtenerlo desde la web.
+
+
+### .4 batch collect
+
+```bash
+bash ./scripts/collect_history.sh data/list.txt data/list/
+```
 
 ---
 
@@ -148,7 +153,7 @@ pip install -r requirements.test.txt
 pytest
 ```
 
-### 5. Deactivate environment
+### 5. Desactivar environment
 
 ```bash
 deactivate
@@ -158,10 +163,10 @@ deactivate
 
 ## Notes / Limitations
 
-- No hay rate limiting implementado; por favor:
+- No se ha implementado rate limiting; por favor:
   - Úsalo de forma responsable
   - Evita enviar muchas requests en poco tiempo
-- Este es un utility script sencillo, pensado principalmente para personal analysis o research.
+- Este es un simple utility script, pensado principalmente para personal analysis o research.
 
 ---
 
