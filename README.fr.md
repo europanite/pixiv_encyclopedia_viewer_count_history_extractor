@@ -5,25 +5,25 @@ permalink: /fr/
 lang: fr
 ---
 
-# [Pixiv Encyclopedia Viewer History Extractor](https://github.com/europanite/pixiv_encyclopedia_viewer_count_history_extractor "Pixiv Encyclopedia Viewer History Extractor")
+# [Pixiv Encyclopedia Viewer History Extractor](https://github.com/europanite/pixiv-encyclopedia-viewer-count-history-extractor "Pixiv Encyclopedia Viewer History Extractor")
 
 [![Python](https://img.shields.io/badge/python-3.10%20|%203.11|%203.12|%203.13-blue)](https://www.python.org/)
 ![OS](https://img.shields.io/badge/OS-Linux%20%7C%20macOS%20%7C%20Windows-blue)
 
-[![CodeQL Advanced](https://github.com/europanite/pixiv_encyclopedia_viewer_count_history_extractor/actions/workflows/codeql.yml/badge.svg)](https://github.com/europanite/pixiv_encyclopedia_viewer_count_history_extractor/actions/workflows/codeql.yml)
-[![Python Lint](https://github.com/europanite/pixiv_encyclopedia_viewer_count_history_extractor/actions/workflows/lint.yml/badge.svg)](https://github.com/europanite/pixiv_encyclopedia_viewer_count_history_extractor/actions/workflows/lint.yml)
-[![Pytest](https://github.com/europanite/pixiv_encyclopedia_viewer_count_history_extractor/actions/workflows/pytest.yml/badge.svg)](https://github.com/europanite/pixiv_encyclopedia_viewer_count_history_extractor/actions/workflows/pytest.yml)
+[![CodeQL Advanced](https://github.com/europanite/pixiv-encyclopedia-viewer-count-history-extractor/actions/workflows/codeql.yml/badge.svg)](https://github.com/europanite/pixiv-encyclopedia-viewer-count-history-extractor/actions/workflows/codeql.yml)
+[![Python Lint](https://github.com/europanite/pixiv-encyclopedia-viewer-count-history-extractor/actions/workflows/lint.yml/badge.svg)](https://github.com/europanite/pixiv-encyclopedia-viewer-count-history-extractor/actions/workflows/lint.yml)
+[![Pytest](https://github.com/europanite/pixiv-encyclopedia-viewer-count-history-extractor/actions/workflows/pytest.yml/badge.svg)](https://github.com/europanite/pixiv-encyclopedia-viewer-count-history-extractor/actions/workflows/pytest.yml)
 
 <p align="right">
-  <a href="https://europanite.github.io/pixiv_encyclopedia_viewer_count_history_extractor/">🇺🇸 English</a> |
-  <a href="https://europanite.github.io/pixiv_encyclopedia_viewer_count_history_extractor/hi/">🇮🇳 हिंदी</a> |
-  <a href="https://europanite.github.io/pixiv_encyclopedia_viewer_count_history_extractor/ja/">🇯🇵 日本語</a> |
-  <a href="https://europanite.github.io/pixiv_encyclopedia_viewer_count_history_extractor/zh-CN/">🇨🇳 简体中文</a> |
-  <a href="https://europanite.github.io/pixiv_encyclopedia_viewer_count_history_extractor/es/">🇪🇸 Español</a> |
-  <a href="https://europanite.github.io/pixiv_encyclopedia_viewer_count_history_extractor/pt-BR/">🇧🇷 Português (Brasil)</a> |
-  <a href="https://europanite.github.io/pixiv_encyclopedia_viewer_count_history_extractor/ko/">🇰🇷 한국어</a> |
-  <a href="https://europanite.github.io/pixiv_encyclopedia_viewer_count_history_extractor/de/">🇩🇪 Deutsch</a> |
-  <a href="https://europanite.github.io/pixiv_encyclopedia_viewer_count_history_extractor/fr/">🇫🇷 Français</a>
+  <a href="https://europanite.github.io/pixiv-encyclopedia-viewer-count-history-extractor/">🇺🇸 English</a> |
+  <a href="https://europanite.github.io/pixiv-encyclopedia-viewer-count-history-extractor/hi/">🇮🇳 हिंदी</a> |
+  <a href="https://europanite.github.io/pixiv-encyclopedia-viewer-count-history-extractor/ja/">🇯🇵 日本語</a> |
+  <a href="https://europanite.github.io/pixiv-encyclopedia-viewer-count-history-extractor/zh-CN/">🇨🇳 简体中文</a> |
+  <a href="https://europanite.github.io/pixiv-encyclopedia-viewer-count-history-extractor/es/">🇪🇸 Español</a> |
+  <a href="https://europanite.github.io/pixiv-encyclopedia-viewer-count-history-extractor/pt-BR/">🇧🇷 Português (Brasil)</a> |
+  <a href="https://europanite.github.io/pixiv-encyclopedia-viewer-count-history-extractor/ko/">🇰🇷 한국어</a> |
+  <a href="https://europanite.github.io/pixiv-encyclopedia-viewer-count-history-extractor/de/">🇩🇪 Deutsch</a> |
+  <a href="https://europanite.github.io/pixiv-encyclopedia-viewer-count-history-extractor/fr/">🇫🇷 Français</a>
 </p>
 
 > Ce README est une version traduite. La version anglaise est la source officielle.

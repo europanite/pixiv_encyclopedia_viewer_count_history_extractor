@@ -1,6 +1,6 @@
-title: "pixiv_encyclopedia_viewer_count_history_extractor"
+title: "pixiv-encyclopedia-viewer-count-history-extractor"
 description: "An Extraction Tool for Pixiv Encyclopedia Viewer Count History"
-baseurl: "/pixiv_encyclopedia_viewer_count_history_extractor"
+baseurl: "/pixiv-encyclopedia-viewer-count-history-extractor"
 url: "https://europanite.github.io"
 theme: minima
 markdown: kramdown
